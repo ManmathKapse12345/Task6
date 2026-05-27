@@ -2,11 +2,34 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    public bool isStarted = false;
-    public bool isMoving = false;
-    public bool isStopped = true;
-    public float fuel = 50.0f;
-    public float speed = 5.0f;
+    public virtual bool isStarted
+    {
+        get { return false; }
+    }
+    public virtual bool isMoving
+    {
+        get { return false; }
+    }
+    public virtual bool isStopped
+    {
+        get { return true; }
+    }
+    public virtual float power
+    {
+        get { return 50.0f; }
+    }
+    public virtual float speed
+    {
+        get { return 5.0f; }
+    }
+    public virtual string engineType
+    {
+        get { return "fuel"; }
+    }
+    public virtual Color color
+    {
+        get { return Color.white; }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     //void Start()
     //{
@@ -42,18 +65,18 @@ public class Vehicle : MonoBehaviour
     //        StopVehicle();
     //    }
     //}
-    public void StartVehicle()
+    public virtual void StartVehicle()
     {
         Debug.Log("Vehicle is started");
     }
 
-    public void StopVehicle()
+    public virtual void StopVehicle()
     {
         Debug.Log("Vehicle is stopped");
         //isMoving = true;
     }
 
-    public void Move()
+    public virtual void Move()
     {
         Debug.Log("Vehicle is moved");
         //if(gameObject.name == "Cylinder")
