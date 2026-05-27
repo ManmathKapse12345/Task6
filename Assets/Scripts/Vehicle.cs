@@ -79,36 +79,5 @@ public class Vehicle : MonoBehaviour
     public virtual void Move()
     {
         Debug.Log("Vehicle is moved");
-        //if(gameObject.name == "Cylinder")
-        //{
-        //    transform.Translate(Vector3.up * Time.deltaTime * speed);
-        //}
-        //else
-        //{
-        //    transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        //}
-        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
-
-    //public void OnMouseDown()
-    //{
-    //    if (!isStarted)
-    //    {
-    //        isStarted = true;
-    //        isStopped = false;
-    //    }
-    //    else if (!isMoving)
-    //    {
-    //        isStarted = false;
-    //        isMoving = true;
-    //        isStopped = false;
-    //    }
-    //    else if (!isStopped)
-    //    {
-    //        isMoving = false;
-    //        isStopped = true;
-    //        isStarted = false;
-    //    }
-
-    //}
 }

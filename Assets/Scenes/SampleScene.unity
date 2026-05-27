@@ -225,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 7246041}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.91708, y: 0, z: -2.58512}
+  m_LocalPosition: {x: -1.91708, y: 0, z: 16.8}
   m_LocalScale: {x: 30, y: 0.05, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -317,8 +317,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0006402586, y: 0.9524504, z: -0.3046864, w: 0.0020009896}
-  m_LocalPosition: {x: -1.6861867, y: 11.318384, z: 19.27104}
+  m_LocalRotation: {x: -0.32291368, y: 0.004252042, z: -0.0014641259, w: -0.9464178}
+  m_LocalPosition: {x: -2.4015164, y: 16.376911, z: -8.12431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 397162934}
   - component: {fileID: 397162933}
   - component: {fileID: 397162932}
+  - component: {fileID: 397162936}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -475,13 +476,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397162931}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.3, y: 1.028, z: 8.26581}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &397162936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397162931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c011895749e402469d991d67292f8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Truck
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +683,7 @@ GameObject:
   - component: {fileID: 1264346523}
   - component: {fileID: 1264346522}
   - component: {fileID: 1264346521}
+  - component: {fileID: 1264346525}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -770,6 +784,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1264346525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264346520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60b05b3e148ef246a2433bbec039623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Car
 --- !u!1 &1790270628
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +808,7 @@ GameObject:
   - component: {fileID: 1790270631}
   - component: {fileID: 1790270630}
   - component: {fileID: 1790270629}
+  - component: {fileID: 1790270633}
   m_Layer: 0
   m_Name: Bike
   m_TagString: Untagged
@@ -882,6 +909,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1790270633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790270628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa1c31a5207a5d4788a8ed6db7f1b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bike
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

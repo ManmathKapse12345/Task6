@@ -47,15 +47,22 @@ public class Car : Vehicle
     public override void Move()
     {
         Debug.Log("Car is moved");
-        //if(gameObject.name == "Cylinder")
-        //{
-        //    transform.Translate(Vector3.up * Time.deltaTime * speed);
-        //}
-        //else
-        //{
-        //    transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        //}
-        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        if (Input.GetKey(KeyCode.T))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.G))
+        {
+            transform.Translate(Vector3.back * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.H))
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.F))
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,17 +73,6 @@ public class Car : Vehicle
     // Update is called once per frame
     void Update()
     {
-        if (isStarted)
-        {
-            StartVehicle();
-        }
-        if (isMoving)
-        {
-            Move();
-        }
-        if (isStopped)
-        {
-            StopVehicle();
-        }
+        Move();
     }
 }
