@@ -22,6 +22,11 @@ public class Vehicle : MonoBehaviour
     {
         get { return 5.0f; }
     }
+
+    public virtual float rotationSpeed
+    {
+        get { return 5.0f; }
+    }
     public virtual string engineType
     {
         get { return "fuel"; }

@@ -23,7 +23,10 @@ public class Car : Vehicle
     {
         get { return 10.0f; }
     }
-
+    public override float rotationSpeed
+    {
+        get { return 15.0f; }
+    }
     public override string engineType
     {
         get { return "CNG"; }
@@ -57,11 +60,15 @@ public class Car : Vehicle
         }
         if (Input.GetKey(KeyCode.H))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            //transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed);
+
         }
         if (Input.GetKey(KeyCode.F))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            //transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.Rotate(Vector3.down * Time.deltaTime * rotationSpeed);
+
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
