@@ -2,37 +2,15 @@ using UnityEngine;
 
 public class Bike : Vehicle
 {
-    public override bool isMoving
-    {
-        get { return false; }
-    }
-    public override bool isStopped
-    {
-        get { return true; }
-    }
-    public override float power
-    {
-        get { return 20.0f; }
-    }
 
+    private float currentSpeed;
     public override float speed
     {
-        get { return 30.0f; }
-    }
-
-    public override float rotationSpeed
-    {
-        get { return 20.0f; }
-    }
-
-    public override string engineType
-    {
-        get { return "Petrol"; }
-    }
-
-    public override Color color
-    {
-        get { return Color.blue; }
+        get { return currentSpeed; }
+        set
+        {
+            currentSpeed = value;
+        }
     }
 
     public override void StartVehicle()
@@ -49,11 +27,11 @@ public class Bike : Vehicle
         Debug.Log("Bike is moved");
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
+            transform.Translate(Vector3.back * Time.deltaTime * currentSpeed);
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -64,10 +42,23 @@ public class Bike : Vehicle
             transform.Rotate(Vector3.down * Time.deltaTime * rotationSpeed);
 
         }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            accelerate();
+        }
+    }
+    public void accelerate()
+    {
+        speed = speed + 2.0f;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        power = 20.0f;
+        rotationSpeed = 20.0f;
+        engineType = "Petrol";
+        color = Color.blue;
+        speed = 30.0f;
         var rend = GetComponent<Renderer>();
         rend.material.color = color;
     }

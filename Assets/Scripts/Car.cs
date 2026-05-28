@@ -2,37 +2,16 @@ using UnityEngine;
 
 public class Car : Vehicle
 {
-    public override bool isMoving
-    {
-        get { return false; }
-    }
-    public override bool isStopped
-    {
-        get { return true; }
-    }
-    public override float power
-    {
-        get { return 30.0f; }
-    }
 
+    private float currentSpeed;
     public override float speed
     {
-        get { return 10.0f; }
+        get { return currentSpeed; }
+        set
+        {
+            currentSpeed = value;
+        }
     }
-    public override float rotationSpeed
-    {
-        get { return 15.0f; }
-    }
-    public override string engineType
-    {
-        get { return "CNG"; }
-    }
-
-    public override Color color
-    {
-        get { return Color.red; }
-    }
-
     public override void StartVehicle()
     {
         Debug.Log("Car is started");
@@ -48,11 +27,11 @@ public class Car : Vehicle
         Debug.Log("Car is moved");
         if (Input.GetKey(KeyCode.T))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed);
         }
         if (Input.GetKey(KeyCode.G))
         {
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
+            transform.Translate(Vector3.back * Time.deltaTime * currentSpeed);
         }
         if (Input.GetKey(KeyCode.H))
         {
@@ -68,6 +47,11 @@ public class Car : Vehicle
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        power = 30.0f;
+        rotationSpeed = 15.0f;
+        speed = 20.0f;
+        engineType = "CNG";
+        color = Color.red;
         var rend = GetComponent<Renderer>();
         rend.material.color = color;
         

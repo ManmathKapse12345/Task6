@@ -2,70 +2,21 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    public virtual bool isMoving
-    {
-        get { return false; }
-    }
-    public virtual bool isStopped
-    {
-        get { return true; }
-    }
-    public virtual float power
-    {
-        get { return 50.0f; }
-    }
+    public float power = 50.0f;
+    private float currentSpeed;
     public virtual float speed
     {
-        get { return 5.0f; }
+        get { return currentSpeed; }
+        set
+        {
+            currentSpeed = value;
+        }
     }
 
-    public virtual float rotationSpeed
-    {
-        get { return 5.0f; }
-    }
-    public virtual string engineType
-    {
-        get { return "fuel"; }
-    }
-    public virtual Color color
-    {
-        get { return Color.white; }
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    //void Start()
-    //{
-    //    StartVehicle();
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    //if (isStarted && !isMoving && !isStopped)
-    //    //{
-    //    //    StartVehicle();
-    //    //}
-    //    //if (isMoving && !isStopped)
-    //    //{
-    //    //    Move();
-    //    //}
-    //    //if (isStopped)
-    //    //{
-    //    //    StopVehicle();
-    //    //}
-
-    //    if (isStarted)
-    //    {
-    //        StartVehicle();
-    //    }
-    //    if (isMoving)
-    //    {
-    //        Move();
-    //    }
-    //    if (isStopped)
-    //    {
-    //        StopVehicle();
-    //    }
-    //}
+    public float rotationSpeed = 5.0f;
+    public string engineType = "fuel";
+    public Color color = Color.white;
+    
     public virtual void StartVehicle()
     {
         Debug.Log("Vehicle is started");
