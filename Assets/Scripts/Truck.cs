@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class Truck : Vehicle
 {
-    public override bool isStarted
-    {
-        get { return false; }
-    }
     public override bool isMoving
     {
         get { return false; }
@@ -61,12 +57,10 @@ public class Truck : Vehicle
         }
         if (Input.GetKey(KeyCode.L))
         {
-            //transform.Translate(Vector3.right * Time.deltaTime * speed);
             transform.Rotate(Vector3.back * Time.deltaTime * rotationSpeed);
         }
         if (Input.GetKey(KeyCode.J))
         {
-            //transform.Translate(Vector3.left * Time.deltaTime * speed);
             transform.Rotate(Vector3.forward * Time.deltaTime * rotationSpeed);
 
         }
@@ -74,7 +68,8 @@ public class Truck : Vehicle
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        var rend = GetComponent<Renderer>();
+        rend.material.color = color;
     }
 
     // Update is called once per frame

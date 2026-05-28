@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    public virtual bool isStarted
-    {
-        get { return false; }
-    }
     public virtual bool isMoving
     {
         get { return false; }
