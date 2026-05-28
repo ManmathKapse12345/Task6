@@ -22,24 +22,50 @@ public class Bike : Vehicle
         Debug.Log("Bike is stopped");
         //isMoving = true;
     }
+
+    public override void MoveForward()
+    {
+        Debug.Log("Bike is moving forward");
+        transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveBackward()
+    {
+        Debug.Log("Bike is moving backward");
+        transform.Translate(Vector3.back * Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveLeft()
+    {
+        Debug.Log("Bike is moving left");
+        transform.Rotate(Vector3.down * Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveRight()
+    {
+        Debug.Log("Bike is moving right");
+        transform.Rotate(Vector3.up * Time.deltaTime * currentSpeed);
+    }
+
+
     public override void Move()
     {
         Debug.Log("Bike is moved");
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed);
+            MoveForward();
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.back * Time.deltaTime * currentSpeed);
+            MoveBackward();
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(Vector3.up*Time.deltaTime*rotationSpeed);
+            MoveRight();
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.down * Time.deltaTime * rotationSpeed);
+            MoveLeft();
 
         }
         if (Input.GetKey(KeyCode.Q))

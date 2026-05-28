@@ -28,8 +28,27 @@ public class Vehicle : MonoBehaviour
         //isMoving = true;
     }
 
+    public virtual void MoveForward()
+    {
+        Debug.Log("Vehicle is moving forward");
+    }
+
+    public virtual void MoveBackward()
+    {
+        Debug.Log("Vehicle is moving backward");
+    }
+
+    public virtual void MoveRight()
+    {
+        Debug.Log("Vehicle is moving right");
+    }
+    public virtual void MoveLeft()
+    {
+        Debug.Log("Vehicle is moving left");
+    }
+
     public virtual void Move()
     {
-        Debug.Log("Vehicle is moved");
+        Debug.Log("Vehicle is moving");
     }
 }

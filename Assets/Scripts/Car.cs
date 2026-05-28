@@ -22,25 +22,49 @@ public class Car : Vehicle
         Debug.Log("Car is stopped");
         //isMoving = true;
     }
+
+    public override void MoveForward()
+    {
+        Debug.Log("Car is moving forward");
+        transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveBackward()
+    {
+        Debug.Log("Car is moving backward");
+        transform.Translate(Vector3.back* Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveLeft()
+    {
+        Debug.Log("Car is moving left");
+        transform.Rotate(Vector3.down * Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveRight()
+    {
+        Debug.Log("Car is moving right");
+        transform.Rotate(Vector3.up*Time.deltaTime* currentSpeed);
+    }
     public override void Move()
     {
         Debug.Log("Car is moved");
         if (Input.GetKey(KeyCode.T))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed);
+            MoveForward();
         }
         if (Input.GetKey(KeyCode.G))
         {
-            transform.Translate(Vector3.back * Time.deltaTime * currentSpeed);
+            MoveBackward();
         }
         if (Input.GetKey(KeyCode.H))
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed);
+            MoveRight();
 
         }
         if (Input.GetKey(KeyCode.F))
         {
-            transform.Rotate(Vector3.down * Time.deltaTime * rotationSpeed);
+            MoveLeft();
 
         }
     }

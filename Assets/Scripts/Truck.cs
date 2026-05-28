@@ -23,24 +23,51 @@ public class Truck : Vehicle
         Debug.Log("Truck is stopped");
         //isMoving = true;
     }
+
+    public override void MoveForward()
+    {
+        Debug.Log("Truck is moving forward");
+        transform.Translate(Vector3.up * Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveBackward()
+    {
+        Debug.Log("Truck is moving backward");
+        transform.Translate(Vector3.down * Time.deltaTime * currentSpeed);
+    }
+
+    public override void MoveRight()
+    {
+        Debug.Log("Truck is moving right");
+        transform.Rotate(Vector3.back * Time.deltaTime * rotationSpeed);
+
+    }
+
+    public override void MoveLeft()
+    {
+        {
+            Debug.Log("Truck is moving left");
+            transform.Rotate(Vector3.forward * Time.deltaTime * rotationSpeed);
+        }
+    }
     public override void Move()
     {
         Debug.Log("Truck is moved");
         if (Input.GetKey(KeyCode.I))
         {
-            transform.Translate(Vector3.up * Time.deltaTime * currentSpeed);
+            MoveForward();
         }
         if (Input.GetKey(KeyCode.K))
         {
-            transform.Translate(Vector3.down * Time.deltaTime * currentSpeed);
+            MoveBackward();
         }
         if (Input.GetKey(KeyCode.L))
         {
-            transform.Rotate(Vector3.back * Time.deltaTime * rotationSpeed);
+            MoveRight();
         }
         if (Input.GetKey(KeyCode.J))
         {
-            transform.Rotate(Vector3.forward * Time.deltaTime * rotationSpeed);
+            MoveLeft();
 
         }
     }
